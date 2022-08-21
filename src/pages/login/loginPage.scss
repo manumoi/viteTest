@@ -38,8 +38,6 @@
             }
 
             button {
-                margin: 0px;
-                border:0px;
                 margin-top: 10px;
                 font-weight: 600;
                 color: white;
@@ -52,6 +50,7 @@
 
         .forgotPassword {
             color: gray;
+            margin-top: 10px;
         }
 
         .errorLoginMsg {
