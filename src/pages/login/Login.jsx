@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import './loginPage.scss'
+import './login.scss'
+import { useNavigate } from 'react-router-dom'
 
-const LoginPage = () => {
+const Login = () => {
+
+  const navigate = useNavigate();
 
   const [login, setLogin]=useState("")
   const [password,setPassword]=useState("")
@@ -10,9 +13,10 @@ const LoginPage = () => {
 
   function handleLogin(e){
     e.preventDefault();
-    if (login === password)
+    if (login === password){
       setLoginError(true)
-    //   
+      return
+    }
     //  async function to check if login worked
     // if true, 
     // determine the user class
@@ -20,6 +24,7 @@ const LoginPage = () => {
     // if false
     // setLoginError(true)
     console.log(`login: ${login} password: ${password}`)
+    navigate("/organizations")
   }
 
   function handleEmailChanged(e){
@@ -33,7 +38,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className='loginPage'>
+    <div className='login'>
       <div className="loginArea">
         <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"></img>
         <form>
@@ -50,4 +55,4 @@ const LoginPage = () => {
 
 }
 
-export default LoginPage
+export default Login
