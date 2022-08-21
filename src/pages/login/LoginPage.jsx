@@ -10,7 +10,8 @@ const LoginPage = () => {
 
   function handleLogin(e){
     e.preventDefault();
-    // if (login === password)
+    if (login === password)
+      setLoginError(true)
     //   
     //  async function to check if login worked
     // if true, 
@@ -31,7 +32,6 @@ const LoginPage = () => {
     setLoginError(false)
   }
 
-
   return (
     <div className='loginPage'>
       <div className="loginArea">
@@ -42,7 +42,7 @@ const LoginPage = () => {
           <button id="login" onClick={handleLogin}>Login</button>
         </form>
           <span className="forgotPassword">Forgot your password...</span>
-        <span style={{display:loginError?"block":"none"}} className="errorLoginMsg">Your login/password doesn't match anything in our database. Please verify everything is correct.</span>
+          <span style={{display : loginError?"block":"none"}} className="errorLoginMsg">Your login/password doesn't match anything in our database. Please verify everything is correct.</span>
       </div>
 
     </div>
