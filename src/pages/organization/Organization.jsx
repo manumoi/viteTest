@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './organization.scss'
-import UserProfile from "../../global/UserProfile"
+import { UserContext } from '../../context/UserContext/UserContext'
 
 const Organization = () => {
 
-  function handleIncrement(){
-    UserProfile.handleIncrement()
-  }
+  const {user, setUser} = useContext(UserContext)
 
   return (
     <div className='organization'>
-        Organization Id: {UserProfile.organizationId}
-        <br/>
-      //  <button onClick={handleIncrement}>INCREMENT</button>
+        Organization Id: {JSON.stringify(user, null, 2)}
     </div>
   )
 }
