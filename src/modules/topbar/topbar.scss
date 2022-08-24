@@ -1,0 +1,28 @@
+.topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height:40px;
+    flex:1;
+    background-color: rgb(21, 3, 61);
+    .backButton{
+        background-color: rgba(20, 20, 20,0.05);
+        color: white;
+        margin-left: 5px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .iduLogo{
+        color:white;
+        font-weight: 500;
+    }
+    .logoutButton{
+        background-color: rgba(20, 20, 20, 0.05);
+        color:white;
+        margin-right: 5px;
+        padding: 5px;
+        border-radius: 5px;
+
+    }
+}
