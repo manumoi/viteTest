@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import DataTable from '../../modules/DataTable/DataTable'
+import Topbar from '../../modules/topbar/Topbar'
 import './organizationListing.scss'
+
+
 
 const OrganizationListing = () => {
 
@@ -8,16 +12,14 @@ const OrganizationListing = () => {
 
   const [userType, setUserType] = useState("regular")
 
-  // useEffect(()=>{
-  //   if (userType=="regular")
-  //     navigate("1234")
-  // }, [])
-
-
+  
 
   return (
     <div className="organizationListing">
-        Organizations
+        <Topbar title="Organizations"/>
+        <div className="main">
+          <DataTable/>
+        </div>
     </div>
   )
 }
