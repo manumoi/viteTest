@@ -4,27 +4,71 @@ import DataTable from '../../modules/DataTable/DataTable'
 import IduDataGrid from '../../modules/IduDataGrid/IduDataGrid'
 import Topbar from '../../modules/topbar/Topbar'
 import './organizationListing.scss'
-import {organizationDataRows, organizationColumnDescriptions} from '../../data/organizationData.jsx'
-
+import { organizationDataRows } from '../../data/organizationData.jsx'
 
 
 const OrganizationListing = () => {
-
-  console.log(organizationColumnDescriptions)
+  
+  const [userType, setUserType] = useState("regular")
   const navigate = useNavigate();
 
-  const [userType, setUserType] = useState("regular")
 
+  // Description of the various columns of the dataGrid of this page
+  const organizationColumnDescriptions = [
+    {
+      field: 'name',
+      headerName: 'Name',
+      width: 500
+    },
+    {
+      field: 'code',
+      headerName: 'Code',
+      width: 90,
+    },
+    {
+      field: 'presentation',
+      headerName: 'Presentation',
+      width: 500,
+    },
+    {
+      field: 'edit',
+      headerName: 'Edit',
+      headerAlign: "center",
+      width: 90,
+      renderCell: (params) => {
+        return (
+          <button onClick={(e)=>handleOrganizationEditing(e, params.id)}>EDIT</button>
+        )
+      }
+    },
+    {
+      field: 'delete',
+      headerName: 'Delete',
+      headerAlign: "center",
+      width: 90,
+      renderCell: (params) => {
+        return (
+          <button /*onClick={console.log(`DELETE params ${params.id}`)}*/>DELETE</button>
+        )
+      }
+    },
+  ];
+
+  const handleOrganizationEditing = (e, id)=>{
+    e.preventDefault();
+    console.log(`navigating to ${id}`)
+    navigate(String(id))
+  }
+  
 
   return (
     <div className="organizationListing">
-        <Topbar/>
-        <div className="main">
-          <IduDataGrid 
-            columnsDescriptions={organizationColumnDescriptions} 
-            rowsData={organizationDataRows}/>
-          {/* <DataTable/> */}
-        </div>
+      <Topbar />
+      <div className="main">
+        <IduDataGrid
+          columnsDescriptions={organizationColumnDescriptions}
+          rowsData={organizationDataRows} />
+      </div>
     </div>
   )
 }

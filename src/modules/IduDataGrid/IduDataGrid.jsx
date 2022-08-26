@@ -17,7 +17,7 @@ const IduDataGrid = (props) => {
         rows={props.rowsData}
         columns={props.columnsDescriptions}
         pageSize={20}
-        rowsPerPageOptions={[10,20,30]}
+        rowsPerPageOptions={[10,50,100]}
         checkboxSelection={false}
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
