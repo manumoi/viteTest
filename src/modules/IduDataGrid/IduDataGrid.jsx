@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import './iduDataGrid.scss';
 
@@ -7,9 +8,9 @@ import './iduDataGrid.scss';
 
 const IduDataGrid = (props) => {
   return (
-    <div className="iduDataGrid">
+    <Box className="iduDataGrid">
       <div className="controlBar">
-        <span className="title">ORGANIZATIONS</span>
+        <span className="title">{props.title}</span>
         <button>+</button>
         <div />
       </div>
@@ -22,7 +23,7 @@ const IduDataGrid = (props) => {
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
       />
-    </div>
+    </Box>
   );
 }
 
