@@ -4,8 +4,7 @@ import DataTable from '../../modules/DataTable/DataTable'
 import IduDataGrid from '../../modules/IduDataGrid/IduDataGrid'
 import Topbar from '../../modules/topbar/Topbar'
 import './organizationListing.scss'
-import { organizationDataRows } from '../../data/organizationData.jsx'
-
+import { organizationDataRows } from '../../data/TestData.jsx'
 
 const OrganizationListing = () => {
   
@@ -66,6 +65,7 @@ const OrganizationListing = () => {
       <Topbar />
       <div className="main">
         <IduDataGrid
+          title="ORGANIZATIONS"
           columnsDescriptions={organizationColumnDescriptions}
           rowsData={organizationDataRows} />
       </div>
