@@ -1,23 +1,5 @@
 import React, { useMemo, useState } from 'react'
 import './app.scss'
-// <<<<<<< HEAD
-// =======
-
-// import Home from './home/Home'
-// import Login from './login/Login'
-// import Organizations from './Organizations/Organizations'
-// import Organization from './organization/organization'
-// import Content from './content/Content'
-// import ContentAnalytics from './contentAnalytics/ContentAnalytics'
-// import Study from './study/Study'
-// import StudyAnalytics from './studyAnalytics/StudyAnalytics'
-// import {
-//   BrowserRouter,
-//   Routes,
-//   Route
-// } from "react-router-dom";
-// >>>>>>> 3749cea3b9ce3b577c50242bffeb56b23ef5ef1a
-
 import Home from './home/Home'
 import Login from './login/Login'
 import OrganizationListing from './organizationListing/OrganizationListing'
@@ -32,7 +14,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import { UserContext } from '../context/UserContext/UserContext'
+import { UserContext } from '../context/userContext/UserContext'
 
 
 const App = () => {
