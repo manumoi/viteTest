@@ -10,9 +10,20 @@ const contentDataRows = [
         latitude: 0.0,
         code: "bla ble bli",
         variants: [
-            { id: "v1", name: 'Titre de la v1', description: "description de la v1", url: "url de la v1", imgUrl: "imgUrl de la v1" },
-            { id: "v2", name: 'Titre de la v2', description: "description de la v2", url: "url de la v2", imgUrl: "imgUrl de la v2" },
-            { id: "v3", name: 'Titre de la v3', description: "description de la v3", url: "url de la v3", imgUrl: "imgUrl de la v3" },
+            { id: "v1", name: 'Titre de la c1v1', url: "url de la c1v1", imgUrl: "imgUrl de la c1v1", description: "description de la c1v1",},
+            { id: "v2", name: 'Titre de la c1v2', url: "url de la c1v2", imgUrl: "imgUrl de la c1v2", description: "description de la c1v2", },
+            { id: "v3", name: 'Titre de la c1v3', url: "url de la c1v3", imgUrl: "imgUrl de la c1v3", description: "description de la c1v3", },
+        ],
+    },
+    {
+        _id: "c2", orgaId: "o2", name: 'Un contenu IDU', presentation: "blablabla, ",
+        longitude: 0.0,
+        latitude: 0.0,
+        code: "bla ble bli",
+        variants: [
+            { id: "v1", name: 'Titre de la c2v1', description: "description de la c2v1", url: "url de la c2v1", imgUrl: "imgUrl de la c2v1" },
+            { id: "v2", name: 'Titre de la c2v2', description: "description de la c2v2", url: "url de la c2v2", imgUrl: "imgUrl de la c2v2" },
+            { id: "v3", name: 'Titre de la c2v3', description: "description de la c2v3", url: "url de la c2v3", imgUrl: "imgUrl de la c2v3" },
         ],
     },
 ]
