@@ -4,20 +4,23 @@ import { UserContext } from "../../context/userContext/UserContext"
 import Topbar from '../../modules/topbar/Topbar'
 import { contentDataRows } from '../../data/TestData.jsx'
 import IduDataGrid from '../../modules/IduDataGrid/IduDataGrid'
-import { color } from '@mui/system'
-import { red } from '@mui/material/colors'
+import { useParams, useSearchParams } from 'react-router-dom'
 
 
-const Organization = () => {
+
+const Organization = (props) => {
 
   const { user, setUser } = useContext(UserContext)
+  const [searchParams, setSearchParams] = useSearchParams()
+  //  const organizationId = searchParams.get("id")
+  const { organizationId } = useParams();
 
   const ContentColumnDescriptions = [
     {
       field: 'name',
       headerName: 'Project Name',
       width: 300,
-      
+
     },
     {
       field: 'presentation',
@@ -27,7 +30,7 @@ const Organization = () => {
     {
       field: 'variantNb',
       headerName: 'Variants',
-      headerAlign:"center",
+      headerAlign: "center",
       width: 90,
       align: "center"
     },
@@ -47,7 +50,7 @@ const Organization = () => {
       field: 'delete',
       headerName: 'Delete',
       headerAlign: "center",
-      align:"center",
+      align: "center",
       width: 90,
       renderCell: (params) => {
         return (
@@ -63,23 +66,26 @@ const Organization = () => {
   return (
     <div className='organization'>
       <Topbar />
-
-      <div className="main">
+       <div className="main">
         <div className="updatePanel">
-          <form type="submit">
-            <input placeholder="Name..." />
-            <input placeholder="Description..." />
-            <button>Update Information</button>
-            <button>Edit Users</button>
-          </form>
-
+          <div className="name">Le chateau fort</div>
+          <div className="description">Bla ble bli blo blu</div>
+          <button className="updateButton>">UPDATE</button>  
         </div>
-        <div className="contentTable">
+        <div className="orgaUserPanel">
+          {/* Admin/idu only. a remove button on each user item, add userButton visible */}
+          <div className="userList">
+            <div className="userItem">Jean Michel <button>X</button></div>
+            <div className="userItem">Marcel Benhur <button>X</button></div>    
+          </div> 
+          <button className="userButton>">+</button>  
+        </div>
+        {/* <div className="contentTable">
           <IduDataGrid
             title="CONTENTS"
             columnsDescriptions={ContentColumnDescriptions}
             rowsData={contentDataRows} />
-        </div>
+        </div> */}
       </div>
     </div >
   )
