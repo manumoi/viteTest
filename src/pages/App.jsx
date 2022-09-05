@@ -15,6 +15,7 @@ import {
   Route
 } from "react-router-dom";
 import { UserContext } from '../context/userContext/UserContext'
+import TestFlexBox from './testFlexBox/TestFlexBox'
 
 
 const App = () => {
@@ -22,6 +23,11 @@ const App = () => {
   const[user, setUser]=useState(null)
   const userMemo = useMemo(()=>({user, setUser}), [user, setUser])
 
+  // return (
+  //   <div className='app'>
+  //     <TestFlexBox/>
+  //   </div>
+  // )
 
   return (
     <div className='app'>
@@ -33,7 +39,7 @@ const App = () => {
               <Route path="organizations"> {/*Only available to admin users*/}
                 <Route index element={<OrganizationListing />} />
                 <Route path=":organizationId">
-                  <Route index element={<Organization />} />
+                  <Route index element={<Organization/>} />
                   <Route path="analytics" element={<OrganizationAnalytics />} />
                 </Route>
               </Route>
