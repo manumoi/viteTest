@@ -11,42 +11,6 @@
             margin: 10px;
             padding: 10px;
             display: flex;
-            .name {
-                background-color: red;
-                padding: 10px;
-            }
-
-            .description {
-                padding: 10px;
-            }
-            .masterInfo{
-                display: flex;
-                flex-direction: column;
-                .code{
-                    display: flex;
-                    flex:1;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: aquamarine;
-                }
-                .pwd{
-                    display: flex;
-                    flex:1;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: hotpink;
-                }
-
-            }
-
-            button {
-                width: 100px;
-                margin: 10px;
-                align-self: center;
-                height: 30px;
-                text-align: center;
-                border-radius: 5px;
-            }
         }
 
         .orgaUserPanel {
@@ -55,42 +19,6 @@
             height: 30px;
             margin: 10px;
             padding: 10px;
-
-            .userList {
-                align-items: center;
-                display: flex;
-                flex: 1;
-
-                .userItem {
-                    margin:10px;
-                    padding:10px;
-                    button {
-                        margin: 0px;
-                        padding: 0px;
-                        max-width: 20px;
-                        max-height: 20px;
-                        min-width: 20px;
-                        min-height: 20px;
-                        vertical-align: middle;
-                        text-align: center;
-                        align-content: center;
-                        align-items: center;
-                        justify-content: center
-                    }
-                }
-
-            }
-
-            button {
-                min-width: 100px;
-                margin: 10px;
-                align-self: center;
-                height: 30px;
-                text-align: center;
-                border-radius: 5px;
-            }
         }
     }
-
-
 }

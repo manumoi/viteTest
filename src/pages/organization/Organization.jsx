@@ -21,8 +21,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Button } from '@mui/material'
 
 
-
-
 const Organization = (props) => {
 
   const { user, setUser } = useContext(UserContext)
