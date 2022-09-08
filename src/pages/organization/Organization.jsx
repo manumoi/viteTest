@@ -1,25 +1,25 @@
 import React, { useContext, useState } from 'react'
-import './organization.scss'
 import { UserContext } from "../../context/userContext/UserContext"
 import Topbar from '../../modules/topbar/Topbar'
 import { contentDataRows } from '../../data/TestData.jsx'
 import IduDataGrid from '../../modules/IduDataGrid/IduDataGrid'
 import { useParams, useSearchParams } from 'react-router-dom'
+import { styled } from '@mui/material/styles';
 
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Button } from '@mui/material'
+import {
+  Box, Paper, IconButton, Input, FilledInput, OutlinedInput, InputLabel,
+  InputAdornment, FormHelperText, FormControl, TextField, Button, 
+} from '@mui/material/'
+import Grid from '@mui/material/Unstable_Grid2';
+import { Visibility, VisibilityOff, } from '@mui/icons-material/'
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 const Organization = (props) => {
 
@@ -32,27 +32,31 @@ const Organization = (props) => {
     {
       field: 'name',
       headerName: 'Project Name',
-      width: 300,
+      flex: 3,
+      //    width: '20%',
 
     },
     {
       field: 'presentation',
       headerName: 'Project Overview',
-      width: 700,
+      flex: 5
+      //    width: '40%',
     },
     {
       field: 'variantNb',
       headerName: 'Variants',
       headerAlign: "center",
-      width: 90,
+      flex: 1,
+      //    width: '10%',
       align: "center"
     },
     {
       field: 'edit',
       headerName: 'Edit',
-      headerAlign: "center",
       align: "center",
-      width: 90,
+      headerAlign: "center",
+      flex: 1,
+      // width: '10%',
       renderCell: (params) => {
         return (
           <button>EDIT</button>
@@ -64,7 +68,8 @@ const Organization = (props) => {
       headerName: 'Delete',
       headerAlign: "center",
       align: "center",
-      width: 90,
+      flex: 1,
+      //  width: '10%',
       renderCell: (params) => {
         return (
           <button>DELETE</button>
@@ -74,47 +79,77 @@ const Organization = (props) => {
   ];
 
   return (
-    <div>
+    <div sx={{ display: 'flex', flexDirection: 'column' }}>
       <Topbar />
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap', width: '50%' }}>
-        <FormControl fullWidth sx={{ m: 1 }}>
-          <TextField
-            label="Name"
-            id="orga-name"
-            sx={{ m: 1, flex: 1 }}
-            disabled
-            size="small"
-          />
-          <TextField
-            label="Description"
-            id="orga-description"
-            sx={{ m: 1, flex: 1 }}
-            disabled
-            multiline
-            rows={6}
-            size="small"
-          />
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-around" }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', }}>
+        {/* <Box sx={{ display: 'flex', flexGrow:'1', width: '30%', margin: "20px" }}> */}
+        <Box sx={{flexGrow:'1'}}>
+          <Grid container spacing={2}>
+            <Grid sx={12}><Item>12</Item></Grid>
+            <Grid sx={8}><Item>8</Item></Grid>
+            <Grid sx={4}><Item>4</Item></Grid>
+            <Grid sx={3}><Item>3</Item></Grid>
+            <Grid sx={12}>
+                <Button variant='contained' sx={{ display: 'flex', width: '25%', alignSelf: 'center' }}>UPDATE</Button>
+            </Grid>
+          </Grid>
+          {/* <FormControl fullWidth>
             <TextField
-              label="Orga Code"
-              id="orga-code"
-              sx={{ flex: 1, m: 1 }}
+              label="Name"
+              id="orga-name"
+              sx={{ m: 1, }}
               disabled
               size="small"
             />
             <TextField
-              label="Orga Validation"
-              id="orga-valid"
-              sx={{ flex: 1, m: 1 }}
+              label="Description"
+              id="orga-description"
+              sx={{ m: 1, }}
               disabled
+              multiline
+              rows={6}
               size="small"
             />
-          </Box>
-          <Button>UPDATE</Button>
-        </FormControl>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-around" }}>
+              <TextField
+                label="Orga Code"
+                id="orga-code"
+                sx={{ m: 1, flex: '1' }}
+                disabled
+                size="small"
+              />
+              <TextField
+                label="Orga Validation"
+                id="orga-valid"
+                sx={{ m: 1, flex: '1' }}
+                disabled
+                size="small"
+              />
+            </Box>
+          </FormControl> */}
+        </Box>
+        <Box sx={{ display: 'flex', width: '70%', height: '100%', backgroundColor: 'blue' }}>
+          <IduDataGrid
+            title="CONTENTS"
+            columnsDescriptions={ContentColumnDescriptions}
+            rowsData={contentDataRows} />
+
+        </Box>
       </Box>
     </div>
-  );
+  )
+  {/* <div> */ }
+  {/* sx={{ display: 'flex' }}> */ }
+  {/* <Box sx={{width:"300", height:"300", backgroundColor:'yellow'}}>Test</Box> */ }
+  {/* <Box sx={{ display:'flex', backgroundColor:'red'}}></Box> */ }
+  {/* <Box sx={{ backgroundColor:'yellow', display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap', width: '40%' }}>
+        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap', width: '40%', backgroundColor:'red'}}>
+
+        </Box> */}
+  {/* </div> */ }
+  //   </div >
+  // );
 
 
   // return (
@@ -146,11 +181,11 @@ const Organization = (props) => {
   //         <button className="userButton>">+</button>   */}
   //       </div>
   //       {/* <div className="contentTable">
+  //       </div> */}
   //         <IduDataGrid
   //           title="CONTENTS"
   //           columnsDescriptions={ContentColumnDescriptions}
   //           rowsData={contentDataRows} />
-  //       </div> */}
   //     </div>
   //   </div >
   // )

@@ -5,7 +5,7 @@ const organizationDataRows = [
 
 const contentDataRows = [
     {
-        _id: "c1", orgaId: "o1", name: 'Rallye Famille FR', presentation: "blablabla, ",
+        id: "c1", orgaId: "o1", name: 'Rallye Famille FR', presentation: "blablabla, ",
         longitude: 0.0,
         latitude: 0.0,
         code: "bla ble bli",
@@ -16,7 +16,7 @@ const contentDataRows = [
         ],
     },
     {
-        _id: "c2", orgaId: "o2", name: 'Un contenu IDU', presentation: "blablabla, ",
+        id: "c2", orgaId: "o2", name: 'Un contenu IDU', presentation: "blablabla, ",
         longitude: 0.0,
         latitude: 0.0,
         code: "bla ble bli",
